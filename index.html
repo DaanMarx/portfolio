@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio</title>
+<title>Daan Marx | Composer & Editor</title>
 
 
 
@@ -117,7 +117,8 @@
     border: 1px solid rgba(232,163,61,0.35); border-radius: 4px;
     padding: 3px 8px;
   }
-  h2{ font-size: 28px; margin: 0 0 20px; font-weight: 700; }
+  h2{ font-size: 28px; margin: 0 0 20px; font-weight: 700; display: flex; align-items: baseline; gap: 14px; }
+  h2 .track-num{ font-weight: 400; white-space: nowrap; line-height: 1; padding: 2px 8px; transform: translateY(-6px); }
 
   .project-grid{
     display:grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: start;
@@ -142,6 +143,7 @@
   .desc p{ color: var(--text-dim); margin: 0 0 16px; }
   .desc p:last-of-type{ margin-bottom: 20px; }
   .tags{ display:flex; flex-wrap:wrap; gap: 8px; }
+  .audio-box + .tags{ margin-top: 14px; }
   .tag{
     font-family:'JetBrains Mono', monospace; font-size: 12px;
     color: var(--cyan); border: 1px solid rgba(77,216,208,0.3);
@@ -201,15 +203,14 @@
   </section>
 
   <div class="tabs" role="tablist" aria-label="Portfolio sections">
-    <button class="tab-btn active" data-tab="video" role="tab" aria-selected="true" id="tab-video">Video</button>
-    <button class="tab-btn" data-tab="music" role="tab" aria-selected="false" id="tab-music">Music</button>
+    <button class="tab-btn active" data-tab="music" role="tab" aria-selected="true" id="tab-music">Music</button>
+    <button class="tab-btn" data-tab="video" role="tab" aria-selected="false" id="tab-video">Videos</button>
   </div>
 
-  <div id="panel-video" class="tab-panel" role="tabpanel" aria-labelledby="tab-video">
+  <div id="panel-video" class="tab-panel" role="tabpanel" aria-labelledby="tab-video" hidden>
 
     <section id="video-01">
-      <div class="track-marker"><span class="track-num mono">VIDEO 01</span></div>
-      <h2>Bury the Light AMV</h2>
+      <h2><span class="track-num mono">VIDEO 01</span><span>Bury the Light AMV</span></h2>
       <div class="project-grid">
         <div>
           <div class="video-box">
@@ -230,8 +231,7 @@
     </section>
 
     <section id="video-02">
-      <div class="track-marker"><span class="track-num mono">VIDEO 02</span></div>
-      <h2>BLØF = Anime Music (read description)</h2>
+      <h2><span class="track-num mono">VIDEO 02</span><span>BLØF = Anime Music (read description)</span></h2>
       <div class="project-grid">
         <div class="video-box">
           <iframe src="https://www.youtube.com/embed/ml1vKuyDHSM" title="BLØFFY - Alles Is Eén Stuk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -251,8 +251,7 @@
     
 
     <section id="video-03">
-      <div class="track-marker"><span class="track-num mono">VIDEO 03</span></div>
-      <h2>Short form content</h2>
+      <h2><span class="track-num mono">VIDEO 03</span><span>Short form content</span></h2>
       <div class="project-grid">
         <div class="video-box vertical">
           <iframe src="https://www.youtube.com/embed/t3eE4Ospxy4" title="Short form content — felting workshop reel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -272,144 +271,125 @@
 
   </div>
 
-  <div id="panel-music" class="tab-panel" role="tabpanel" aria-labelledby="tab-music" hidden>
+  <div id="panel-music" class="tab-panel" role="tabpanel" aria-labelledby="tab-music">
 
     <section id="music-01">
-      <div class="track-marker"><span class="track-num mono">TRACK 01</span></div>
-      <h2><!-- EDIT --> Clip 1 title here</h2>
+      <h2><span class="track-num mono">TRACK 01</span><span>Luck of the Draw</span></h2>
       <div class="project-grid">
-        <div class="audio-box">
-          <audio controls preload="metadata">
-            <source src="audio/clip-01.mp3" type="audio/mpeg">
-          </audio>
+        <div>
+          <div class="audio-box">
+            <audio controls preload="metadata">
+              <source src="audio/clip-01.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="tags">
+            <span class="tag">Fusion</span>
+            <span class="tag">warm</span>
+            <span class="tag">brass</span>
+            <span class="tag">melodic</span>
+          </div>
         </div>
         <div class="desc">
-          <p><!-- EDIT --> A sentence or two about this clip: what it's for, the mood/genre, your role (composed / produced / mixed).</p>
-          <div class="tags">
-            <span class="tag"><!-- EDIT -->Genre tag</span>
-            <span class="tag"><!-- EDIT -->Tool/DAW used</span>
-          </div>
+          <p>Imagine: Modern triple-A arcade racer, first level, designed to get the player excited to play. Sunny vibe, big set-piece racetrack (maybe in an airport or a big harbor) and music that is fun, catchy, inviting, and working along with the gameplay to instantly hook the player.</p>
         </div>
       </div>
     </section>
 
     <section id="music-02">
-      <div class="track-marker"><span class="track-num mono">TRACK 02</span></div>
-      <h2><!-- EDIT --> Clip 2 title here</h2>
+      <h2><span class="track-num mono">TRACK 02</span><span>The Maiden of Cheyenne</span></h2>
       <div class="project-grid">
-        <div class="audio-box">
-          <audio controls preload="metadata">
-            <source src="audio/clip-02.mp3" type="audio/mpeg">
-          </audio>
+        <div>
+          <div class="audio-box">
+            <audio controls preload="metadata">
+              <source src="audio/clip-02.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="tags">
+            <span class="tag">Orchestral</span>
+            <span class="tag">epic</span>
+            <span class="tag">pirate</span>
+            <span class="tag">heroic</span>
+          </div>
         </div>
         <div class="desc">
-          <p><!-- EDIT --> Description here.</p>
-          <div class="tags">
-            <span class="tag"><!-- EDIT -->Genre tag</span>
-            <span class="tag"><!-- EDIT -->Tool/DAW used</span>
-          </div>
+          <p>Imagine: Heroic introduction of our dashing protagonist. Scenes of swordplay, buccaneering, epic naval combat, and other forms of swashbucklery, together with the music, evoke an appetite for fun and adventure.</p>
         </div>
       </div>
     </section>
 
     <section id="music-03">
-      <div class="track-marker"><span class="track-num mono">TRACK 03</span></div>
-      <h2><!-- EDIT --> Clip 3 title here</h2>
+      <h2><span class="track-num mono">TRACK 03</span><span>Sleep in the Dark</span></h2>
       <div class="project-grid">
-        <div class="audio-box">
-          <audio controls preload="metadata">
-            <source src="audio/clip-03.mp3" type="audio/mpeg">
-          </audio>
+        <div>
+          <div class="audio-box">
+            <audio controls preload="metadata">
+              <source src="audio/clip-03.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="tags">
+            <span class="tag">electric guitar</span>
+            <span class="tag">synth-lead</span>
+            <span class="tag">triplet-feel</span>
+            <span class="tag">keyboard solo</span>
+          </div>
         </div>
         <div class="desc">
-          <p><!-- EDIT --> Description here.</p>
-          <div class="tags">
-            <span class="tag"><!-- EDIT -->Genre tag</span>
-            <span class="tag"><!-- EDIT -->Tool/DAW used</span>
-          </div>
+          <p>Imagine: Final boss of a fast paced 2D platformer where the player has to outrun the boss by performing a complex sequence of slides, jumps and dodges. You keep failing every attempt, but you don't give up because that soundtrack is so banging.</p>
         </div>
       </div>
     </section>
 
     <section id="music-04">
-      <div class="track-marker"><span class="track-num mono">TRACK 04</span></div>
-      <h2><!-- EDIT --> Clip 4 title here</h2>
+      <h2><span class="track-num mono">TRACK 04</span><span>Nobody's Runner</span></h2>
       <div class="project-grid">
-        <div class="audio-box">
-          <audio controls preload="metadata">
-            <source src="audio/clip-04.mp3" type="audio/mpeg">
-          </audio>
+        <div>
+          <div class="audio-box">
+            <audio controls preload="metadata">
+              <source src="audio/clip-04.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="tags">
+            <span class="tag">Brass</span>
+            <span class="tag">synth-lead</span>
+            <span class="tag">electric guitar</span>
+            <span class="tag">syncopated</span>
+          </div>
         </div>
         <div class="desc">
-          <p><!-- EDIT --> Description here.</p>
-          <div class="tags">
-            <span class="tag"><!-- EDIT -->Genre tag</span>
-            <span class="tag"><!-- EDIT -->Tool/DAW used</span>
-          </div>
+          <p>Imagine: Indie game, stylish modern pixel-art, dark and gritty. Futuristic/cyberpunk city. Nighttime. A city of con-artists and thieves. You play as a smuggler. The gameplay involves completing levels as fast as possible without getting detected. At the end of a level a cutscene starts playing where you get spotted, which kicks off the final gameplay sequence of the level: the getaway. The music kicks in at the moment you regain control of the character, evoking a sense of momentum and adrenaline.</p>
         </div>
       </div>
     </section>
 
     <section id="music-05">
-      <div class="track-marker"><span class="track-num mono">TRACK 05</span></div>
-      <h2><!-- EDIT --> Clip 5 title here</h2>
+      <h2><span class="track-num mono">TRACK 05</span><span>Multatuli</span></h2>
       <div class="project-grid">
-        <div class="audio-box">
-          <audio controls preload="metadata">
-            <source src="audio/clip-05.mp3" type="audio/mpeg">
-          </audio>
+        <div>
+          <div class="audio-box">
+            <audio controls preload="metadata">
+              <source src="audio/clip-06.mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          <div class="tags">
+            <span class="tag">acoustic guitar</span>
+            <span class="tag">bass</span>
+            <span class="tag">warm</span>
+            <span class="tag">crunchy</span>
+            <span class="tag">emotional</span>
+          </div>
         </div>
         <div class="desc">
-          <p><!-- EDIT --> Description here.</p>
-          <div class="tags">
-            <span class="tag"><!-- EDIT -->Genre tag</span>
-            <span class="tag"><!-- EDIT -->Tool/DAW used</span>
-          </div>
+          <p>Best not to ruin the surprise on this one :) enjoy</p>
         </div>
       </div>
     </section>
+
+    <!-- PARKED TRACKS (original clips 8, 7 and 5). To restore one: move its
+         <section> block above this comment and outside the comment markers.
 
     <section id="music-06">
       <div class="track-marker"><span class="track-num mono">TRACK 06</span></div>
-      <h2><!-- EDIT --> Clip 6 title here</h2>
-      <div class="project-grid">
-        <div class="audio-box">
-          <audio controls preload="metadata">
-            <source src="audio/clip-06.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-        <div class="desc">
-          <p><!-- EDIT --> Description here.</p>
-          <div class="tags">
-            <span class="tag"><!-- EDIT -->Genre tag</span>
-            <span class="tag"><!-- EDIT -->Tool/DAW used</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="music-07">
-      <div class="track-marker"><span class="track-num mono">TRACK 07</span></div>
-      <h2><!-- EDIT --> Clip 7 title here</h2>
-      <div class="project-grid">
-        <div class="audio-box">
-          <audio controls preload="metadata">
-            <source src="audio/clip-07.mp3" type="audio/mpeg">
-          </audio>
-        </div>
-        <div class="desc">
-          <p><!-- EDIT --> Description here.</p>
-          <div class="tags">
-            <span class="tag"><!-- EDIT -->Genre tag</span>
-            <span class="tag"><!-- EDIT -->Tool/DAW used</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="music-08">
-      <div class="track-marker"><span class="track-num mono">TRACK 08</span></div>
-      <h2><!-- EDIT --> Clip 8 title here</h2>
+      <h2>Title here (original clip 8)</h2>
       <div class="project-grid">
         <div class="audio-box">
           <audio controls preload="metadata">
@@ -417,23 +397,63 @@
           </audio>
         </div>
         <div class="desc">
-          <p><!-- EDIT --> Description here.</p>
+          <p>Description here.</p>
           <div class="tags">
-            <span class="tag"><!-- EDIT -->Genre tag</span>
-            <span class="tag"><!-- EDIT -->Tool/DAW used</span>
+            <span class="tag">Genre tag</span>
+            <span class="tag">Tool/DAW used</span>
           </div>
         </div>
       </div>
     </section>
 
+    <section id="music-07">
+      <div class="track-marker"><span class="track-num mono">TRACK 07</span></div>
+      <h2>Title here (original clip 7)</h2>
+      <div class="project-grid">
+        <div class="audio-box">
+          <audio controls preload="metadata">
+            <source src="audio/clip-07.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="desc">
+          <p>Description here.</p>
+          <div class="tags">
+            <span class="tag">Genre tag</span>
+            <span class="tag">Tool/DAW used</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="music-08">
+      <div class="track-marker"><span class="track-num mono">TRACK 08</span></div>
+      <h2>Title here (original clip 5)</h2>
+      <div class="project-grid">
+        <div class="audio-box">
+          <audio controls preload="metadata">
+            <source src="audio/clip-05.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="desc">
+          <p>Description here.</p>
+          <div class="tags">
+            <span class="tag">Genre tag</span>
+            <span class="tag">Tool/DAW used</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    END PARKED TRACKS -->
+
+
   </div>
 
   <footer id="contact">
-    <span class="mono"><!-- EDIT --> Amsterdam · <a href="mailto:you@email.com">you@email.com</a></span>
+    <span class="mono"><a href="mailto:daan.marx@gmail.com">daan.marx@gmail.com</a></span>
     <span class="socials">
-      <!-- EDIT: add or remove links as needed -->
-      <a href="#">YouTube</a>
-      <a href="#">Instagram</a>
+      <a href="https://www.youtube.com/@dorian_md" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://soundcloud.com/d-marx-944782392" target="_blank" rel="noopener">SoundCloud</a>
     </span>
   </footer>
 
